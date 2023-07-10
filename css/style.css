@@ -1,0 +1,1481 @@
+@charset "utf-8";
+
+@font-face {
+    font-family: 'GmarketSansMedium';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2001@1.1/GmarketSansMedium.woff') format('woff');
+    font-weight: 500;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'GmarketSansLight';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2001@1.1/GmarketSansLight.woff') format('woff');
+    font-weight: 300;
+    font-style: normal;
+}
+
+body{
+    overflow-x: hidden;
+} 
+
+
+*{
+    font-family: 'GmarketSansMedium', 'GmarketSansLight' ;
+}
+
+
+
+body,
+ol,
+ul {
+    margin: 0;
+    padding: 0;
+    font-family: 'GmarketSansMedium';
+}
+
+ol,
+ul {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+}
+
+.clearfix::before,
+.clearfix::after {
+    content: "";
+    display: block;
+}
+
+.clearfix::after {
+    clear: both;
+}
+
+
+/* 팝업창 */
+.divpop {
+    position: absolute;
+    z-index:99999999;
+    top:50px;
+    left:120px;
+    width:350px;
+    height:500px;
+    border:1px solid black;
+    background:url(../img/TOPbenner.png) no-repeat center center;
+    display:none;
+}
+.button_area {position:absolute;bottom:0;left:10px;} 
+
+
+/* 
+레이아웃 
+*/
+
+/* header */
+header{
+    width: 100%;
+
+}
+#header_wrap{
+    width: 100%;
+}
+#header_wrap .top_event{
+    width: 100%;
+    height: 100px;
+    background-color: #ebf6fc
+}
+
+#header_wrap .top_event{
+    position: relative;
+    background: #eef7fc url(../img/TOPbenner.png) no-repeat center center;
+    width: 100%;
+	height: 100px;
+}
+
+#header_wrap .header{
+    width: 1260px;
+    margin: 0 auto;
+    height: 110px;
+}
+
+#header_wrap .container{
+    width: 100%;
+    height: 60px;
+    background-color: lightblue;
+    border-top: 1px solid #000;
+    border-bottom: 1px solid #000;
+    font-size: 0.875em;
+
+}
+
+
+#header_wrap .header .logo{
+    width: 178px;
+    height: inherit;
+}
+
+#header_wrap .header .logo img{
+    margin-top: 35px;
+    margin-left: -60px;
+}
+
+#header_wrap .header .search{
+    width: 552px;
+    height: inherit;
+}
+
+#header_wrap .header .search .searchBox{
+    width: 400px;
+    height: 30px;
+    margin: 40px auto;
+    background-color: antiquewhite;
+}
+
+
+/* 찾기 버튼 */
+#header_wrap .header .search{
+    margin-top: 30px;
+    position: relative;
+    width: 400px;
+    margin: 50px auto;
+    top: -135px;
+    left: 0px;
+}
+
+#header_wrap .header .search  input{
+    width: 400px;
+    min-width: 200px;
+    font-size: 15px;
+    padding: 15px 0 11px 10px;
+    border: 2.5px solid #1d74c5;
+    background: rgba(255, 255, 255, 1);
+    font-weight: 700;
+    color: #272727;
+}
+
+#header_wrap .header .search .search_btn{
+    content: '\e97a';
+    font-family: xeicon;
+    width: 53px;
+    height: 49px;
+    position: absolute;
+    top: 0px;
+    left: 412px;
+    background-color: #1d74c5;
+    color: #fff;
+    font-size: 1.5em;
+    cursor: pointer;
+    text-align: center;
+    line-height: 50px;
+    
+}
+
+#header_wrap .header .search button{
+    border:none;
+}
+
+
+/* 찾기버튼 끝 */
+
+
+
+
+
+
+
+#header_wrap .header .weather_log .weather{
+    width: 50%;
+    height: 71px;
+    /* background-color: cadetblue; */
+    margin-top: 19px;
+/* 날씨 영역 위치잡음 */
+    position: relative;
+    top: -300px;
+    left: 1000px;
+}
+#header_wrap .header .weather_log .login{
+    width: 50%;
+    height: 50px;
+    /* background-color: lightblue; */
+    position: relative;
+    left: 200px;
+    top: -50px;
+  
+}
+
+
+
+/* 날씨 */
+.api {
+    float: left;
+    width: 150px;
+    height: 70px;
+    margin-top: 10px;
+    box-sizing: border-box;
+    position: relative;
+    top: -20px;
+
+}
+
+.api_wrap{
+    width: 80%;
+    height: auto;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(255, 255, 255, 0);
+    border-radius: 10px;
+    color: #000000;
+    float: left;
+    left: 30px;
+}
+
+.date{
+    width: 100%;
+    height: 50px;
+    word-break: keep-all;
+    text-align: center;
+
+}
+
+.cicon{
+    width: 50px;
+    height: 50px;
+    line-height: 5px;
+    text-align: center;
+    font-size: 50px;
+/*     vertical-align: middle;
+ */    position: relative;
+    left: -22px;
+    top: 35px;
+    display: block;
+
+}
+.temp_info{
+    width: 90%;
+    margin: 0 auto;
+    text-align: center;
+    position: relative;
+    
+}
+
+.ctemp{ /* 현재온도 */
+    display: block;
+    position: relative;
+    left: 30px;
+    top: -10px;
+    color: #1d74c5;
+    font-weight: 800;
+
+}
+
+
+
+/* 최고온도, 최저온도,도시이름은 가림 */
+.temp_info>.date,
+.temp_info>.cname,
+.temp_info>.chightemp,
+.temp_info>.clowtemp{
+    display: none;
+}
+
+
+
+.temp_info>div{margin-bottom: 10px;}
+
+
+
+/* 날씨끝 */
+
+/* 로그인 */
+
+
+
+.login>ul{
+    display: block;
+}
+.login>ul>li{
+    list-style: none;
+    margin-bottom: 10px;
+    
+}
+
+.login>ul>li>a{
+    text-decoration-line : none;
+    position: relative;
+    top: -46px;
+    left: 15px;
+    float: left;
+    margin-left: 15px;
+    color: #000;
+}
+
+.login>ul>li>a:hover{
+    text-decoration:underline; color:#070707
+}
+
+.weather_log .login>ul img{
+    display: block;
+    float: left;
+    position: relative;
+    top: -43px;
+    left: 20px;
+
+}
+
+#header_wrap .header .weather_log .login a{
+    display: block;
+    position: relative;
+    top: -310px;
+    left: 965px;
+}
+
+#header_wrap .header .weather_log .login img{
+    display: block;
+    position: relative;
+    top: -308px;
+    left: 967px;
+
+}
+
+
+/* nav------------------- */
+nav {
+	position: relative;
+	width: 100%;
+	font-size: 0.875em;
+	background-color: #fff;
+    z-index: 9999;
+}
+nav::after {
+	content: "";
+	position: absolute;
+	bottom: 0;
+	z-index: 100;
+	width: 100%;
+	height: 1px;
+	background-color: #eaeaea;
+}
+nav > ul {
+	position: relative;
+	text-align: center;
+}
+nav > ul > li {
+	display: inline-block;
+}
+nav > ul > li > a {
+	display: block;
+	padding: 10px 40px;
+	font-weight: 600;
+	color: #666;
+}
+
+
+
+nav .sub { /* 수정 */
+	position: absolute;
+	left: 0;
+	width: 100%;
+
+	background-color: #ffffff;
+    display: none; 
+
+}
+nav .sub .sub_contents {
+	margin: 0 auto;
+	width: 1440px;
+	text-align: left;
+}
+
+/*  */
+nav .sub .sub_contents ul {
+	display: inline-block;
+	width: 200px;
+	vertical-align: top;
+}
+
+nav .sub .sub_contents ul .subli{
+    padding: 10px 0;
+    margin-top: 20px;
+	line-height: 24px;
+	text-indent: 18px;
+	background-color: #1d74c5;
+	-webkit-box-sizing: border-box;
+	box-sizing: border-box;
+    border-radius: 30px;
+    display: flex;
+    margin-left: 13px;
+}
+
+nav .sub .sub_contents ul>ul li{
+    line-height: 18px;
+    margin-top: 20px;
+    margin-left: 16px;
+    color: #303030;
+}
+
+
+/* li>a 호버했을때 글씨색바뀜 */
+nav .sub .sub_contents ul>ul li a::before{color:#303030;}
+
+
+nav .sub .sub_contents ul>ul li a:hover{
+    color: #1b6db9;
+}
+
+nav .sub .sub_contents ul>ul li a:hover::before{
+    color:#303030;
+}
+
+nav .sub .sub_contents ul .subli a{
+    color: white;
+    font-weight: 550;
+    
+}
+
+
+
+nav .sub .sub_contents li a {
+	color: #666;
+}
+nav .sub .sub_contents li:first-child {
+	border-top: none;
+}
+nav .sub .sub_contents .brand {
+	display: inline-block;
+	margin: 10px;
+	padding: 10px;
+	width: 300px;
+	height: 100%;
+	vertical-align: top;
+	color: #666;
+	-webkit-box-sizing: border-box;
+	box-sizing: border-box;
+    background-color: #1d74c5;
+    min-height: 300px;
+}
+
+nav .sub .sub_contents .brand span{
+    font-size: 2em;
+    color: white;
+}
+nav .sub .sub_contents .brand .linebox{
+    display: block;
+    width: 30px;
+    height: 3px;
+    margin-top: 10px;
+    background-color: #ffffff;
+    position: relative;
+    left: 6px;
+}
+nav .sub .sub_contents .brand img{
+    position: relative;
+    left: 170px;
+    top: 100px;
+}    
+
+
+
+
+/* 자주 찾는 서비스 */
+
+section{
+    display: block;
+    position: relative;
+    top: 40px;
+    /* background: violet; */
+
+}
+
+
+#service{
+    width: 100%;
+    height: 230px;
+    margin-top: 80px;
+}
+
+#service #service_center{
+    width: 1200px;
+    height: 230px;
+    margin: 0 auto;
+}
+
+#service #service_center #service_t{
+    width: 1200px;
+    height: 50px;
+}
+
+
+
+#service #service_center #service_t h1{
+    font-size: 1.8em;
+    display: block;
+    position: relative;
+    left: -90px;
+    top: -20px;
+}
+
+
+#service #service_center #service_box{
+    display: block;
+    width: 30px;
+    height: 4px;
+    margin-top: 10px;
+    background-color: #1d74c5;
+    position: relative;
+    left: -90px;
+    top: 10px;
+
+}
+
+
+#service #service_center #service_menu{
+    width: 1200px;
+    height: 180px;
+    position: relative;
+    top: -110px;
+    left: 50px;
+    
+}
+#service #service_center #service_menu ul{
+    position: absolute;
+    left: 0px;
+}
+
+
+#service #service_center #service_menu ul li{
+    float: left;
+}
+
+.service_box{
+    display: block;
+    width: 75px;
+    height: 75px;
+    background: rgba(29,116,197,0.2);
+    border-radius: 50px;
+    text-align: center;
+    margin: 26px;
+    border: 3px solid transparent;
+    position: relative;
+}
+
+#service #service_center #service_menu ul li:hover .service_box{
+    border: 3px solid #1d74c5;
+    background: #f1f0f0;
+}
+
+
+
+.service_box span img{
+    margin-top: 15px;
+}
+
+.service_box p{
+    width: 105px;
+    height: 50px;
+    margin-top: 25px;
+    margin-left: -15px;
+    color: black;
+}
+
+
+
+/* 보건소배너 섹션2---------------- */
+
+.inner{
+    width: 1400px;
+    height: auto;
+    position: relative;
+    left: 0;
+    top: 200px;
+    margin: 0 auto;
+    background: url(../img/bgbg.png) no-repeat center center;
+}
+
+section#event .inner{
+    width: 1200px;
+    padding: 60px 0;
+    
+}
+
+section#event .typebox{
+    height: 50px;
+}
+
+section#event .type{
+    position: relative;
+    font-size: 40px;
+    font-weight: normal;
+    top: 0px;
+    text-align: center;
+    color: #131313;
+    
+}
+.typed-cursor{
+    color: #1d74c5;
+    font-weight: 700;
+    
+}
+
+section#event .inner ul.tab{
+    position: relative;
+    height: 570px;
+    top: -180px;
+}
+section#event .inner ul.tab li{
+    position: absolute;
+    width: 597px;
+    
+}
+section#event .inner ul.tab li a{
+    position: absolute;
+    right: -500px;
+    display: block;
+    width: 440px;
+    font-weight: normal;
+    overflow: hidden;
+}
+
+section#event .inner ul.tab li a h3{
+    position: relative;
+    width: 400px;
+    height: auto;
+    font-size: 13px;
+    margin-left: 40px;
+    background: #fff;
+    transition: all 0.4s;
+    padding-bottom: 14px;
+    border-bottom: 1px solid #ccc;
+    overflow: hidden;
+}
+
+/* 호버했을때 이미지 뜨는거 위치잡아줌 */
+.bigimg{
+    position: relative;
+    top: -100px;
+}
+
+
+
+section#event .inner ul.tab li.nth1 a{
+    top: 0; padding-top: 0;
+}
+
+section#event .inner ul.tab li.nth2 a{
+    top: 140px;
+}
+section#event .inner ul.tab li.nth3 a{
+    top: 280px;
+}
+section#event .inner ul.tab li.nth4 a{
+    top: 420px;
+}
+section#event .inner ul.tab li a h3:hover{
+    margin-left: 0;
+}
+section#event .inner ul.tab li a h3 img{
+    position: absolute;
+    left: 0;
+    display: block;
+    width: 110px;
+    height: 110px;
+    margin-right: 30px;
+    filter: grayscale(100%);
+    transition: all 0.4s;
+}
+section#event .inner ul.tab li a:hover h3 img{
+    filter: grayscale(0%);
+}
+section#event .inner ul.tab li a:focus h3 img{
+    filter: grayscale(0%);
+}
+
+section#event .inner ul.tab li a h3 span.txtWrap{
+    display: block;
+    width: 280px;
+    float: right;
+    color: #999;
+    padding: 10px 0;
+}
+
+section#event .inner ul.tab li a:hover h3 span.txtWrap{
+    color: #666;
+    
+}
+section#event .inner ul.tab li a:focus h3 span.txtWrap{
+    color: #666;
+}
+
+section#event .inner ul.tab li a h3 span.txtWrap>.lt{
+    line-height: 10px;
+}
+
+section#event .inner ul.tab li a h3 span.pay{
+    display: inline-block;
+    width: 120px;
+    height: 24px;
+    border-radius: 12px;
+    background: #2f62cf;
+    margin-left: 5px;
+    text-align: center;
+    color: #fff;
+    line-height: 24px;
+    margin-top: 10px;
+    transition: all 0.4s;
+    padding: 3px 0px 0px 0px;
+}
+
+section#event .inner ul.tab li div{
+    width: 480px;
+    height: auto;
+    margin-top: 60px;
+    background: #fff;
+    opacity: 0;
+    transition: all 0.4s;
+}
+
+section#event .inner ul.tab li div img{
+    width: 597px;
+    /* margin-top: 37px; */
+}
+
+section#event .inner ul.tab li.first div{
+    opacity: 1;
+}
+section#event .inner ul.tab li a:hover + div{
+    opacity: 1;
+}
+section#event .inner ul.tab li a:focus + div{
+    opacity: 1;
+}
+
+
+/* 달성군 보건소 소식 */
+.tap_txt{
+    width: 1440px;
+    display: block;
+    position: relative;
+    top: 120px;
+    left: 40px;
+}
+
+.tap_txt h1{
+    color: #000;
+    font-weight: 800;
+    font-size: 1.8em;
+}
+
+.tap_txt p{
+    color: #505050;
+    display: block;
+    position: absolute;
+    top: 30px;
+
+}
+
+.tap_txt h1>.txt_blue{
+    color: rgba(29,116,197,1);
+}
+
+
+
+
+/* 섹션3탭메뉴-------------------------------- */
+
+
+/* 탭메뉴 */
+#section2 { 
+    width: 1440px;
+    height: 480px;
+    margin: 0 auto;
+}
+
+.tabArea { 
+    background-color: rgba(29,116,197,1);
+    width: 653px;
+    height: 348px;
+    margin: 0 auto;
+    margin-left: 40px;
+    border: 2px solid #fff;
+    padding: 35px 40px; 
+    box-sizing: border-box;
+    border-radius: 30px;
+    /* 위치치정 */
+    display: inline-block;
+    top: 150px;
+}
+
+.day{
+    float: right;
+    font-size: 14px;
+    color: #ffffff;
+    position: relative;
+    top: -32px;
+}
+
+.tabArea .tab {
+    display: flex;
+    justify-content: space-between;
+
+}
+    
+.tabArea .tabBox li{
+    list-style-type: disc;
+    color: #ffffff;
+    
+    
+}
+
+
+
+.tabArea .tab li a {
+    font-size: 15px;
+    color: #1f1f1f; 
+    font-weight: 500;
+    padding: 13px 30px 10px 30px;
+	line-height: 24px;
+	background-color: #ffffff;
+	-webkit-box-sizing: border-box;
+	box-sizing: border-box;
+    border-radius: 30px;
+    display: flex;
+    margin-left: 13px;
+}
+
+
+
+/* 탭버튼 눌렀을시 글자 색상변경 */
+.tabArea .tab li.on a {
+     font-weight: bold; color: rgba(29,116,197,1); 
+}
+/* 탭박스 영역 기본 옵션은 디스플레이 숨김 */
+.tabArea .tabBox {
+     margin-top: 35px; display: none; 
+}
+/* 탭버튼이 눌러졌을시 관련된 탭박스 활성화 */
+.tabArea .tabBox.on { display: block; }
+.tabArea .tabBox p { font-size: 14px; color: #ffffff; }
+.tabArea .tabBox h3 { margin-bottom: 20px; }
+
+
+
+/* 슬라이드 배너------------------------ */
+
+
+#section2 .slidebanner{
+    width: 653px;
+    height: 348px;
+    box-sizing: border-box;
+    border-radius: 30px;
+    background-color: #000;
+    float: right;
+    margin-right: 40px;
+    position: relative;
+    top: 150px;
+}
+
+
+.slide {
+    /* layout */
+    display: flex;
+    flex-wrap: nowrap;
+    /* 컨테이너의 내용물이 컨테이너 크기(width, height)를 넘어설 때 보이지 않도록 하기 위해 hidden을 준다. */
+    overflow: hidden;
+  
+    /* position */
+    position: relative;
+  
+    /* size */
+    width: 653px;
+  
+    /* slide drag를 위해 DOM요소가 드래그로 선택되는것을 방지 */
+    user-select: none;
+
+    border-radius: 30px;
+    margin: 0 auto;
+
+    
+}
+
+.slide_item img{
+    width: 653px;
+    height: 350px;
+}
+
+.slide_item .item1 a{background: url(../img/bannerimg/선별진료소\ 안내.jpg) no-repeat center center;
+}
+.slide_item .item2 a{background: url(../img/bannerimg/암건강검진.jpg) no-repeat center center;
+}
+.slide_item .item3 a{background: url(../img/bannerimg/원숭이두창\ 예방수칙.jpg) no-repeat center center;
+}
+.slide_item .item4 a{background: url(../img/bannerimg/일반진료\,검사\ 등\ 민원재기안내.jpg) no-repeat center center;
+}
+.slide_item .item5 a{background: url(../img/bannerimg/혈압측정기\ 위치지도.jpg) no-repeat center center;
+}
+
+.slide_item {
+    /* layout */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  
+    /* position - 버튼 클릭시 left offset값을 적용시키기 위해 */
+    position: relative;
+    left: 0px;
+  
+    /* size */
+    width: 100%;
+    height: 348px;
+    /* flex item의 flex-shrink는 기본값이 1이므로 컨테이너 크기에 맞게 줄어드는데, 슬라이드를 구현할 것이므로 줄어들지 않도록 0을 준다. */
+    flex-shrink: 0;
+  
+    /* transition */
+    transition: left 0.15s;
+  }
+.slide_button {
+    /* layout */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  
+    /* position */
+    position: absolute;
+    /* 버튼이 중앙에 위치하게 하기위해 계산 */
+    top: calc(50% - 16px);
+  
+    /* size */
+    width: 32px;
+    height: 32px;
+  
+    /* style */
+    border-radius: 100%;
+    background-color: #cccc;
+    cursor: pointer;
+  }
+  
+.slide_prev_button {
+    left: 10px;
+  }
+.slide_next_button {
+    right: 10px;
+  }
+  
+  /* 각 슬라이드가 변경되는 것을 시각적으로 확인하기 쉽도록 각 슬라이드별 색상 적용 */
+.slide_item.item1 {
+    background-color: white;
+  }
+.slide_item.item2 {
+    background-color: white;
+  }
+.slide_item.item3 {
+    background-color: white;
+  }
+.slide_item.item4 {
+    background-color: white;
+  }
+.slide_item.item5 {
+    background-color: white;
+  }
+  
+  /* 페이지네이션 스타일 */
+ul,
+li {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+.slide_pagination {
+    /* layout */
+    display: flex;
+    gap: 5px;
+  
+    /* position */
+    position: absolute;
+    bottom: 0;
+    /* left:50%, translateX(-50%)를 하면 가로 가운데로 위치시킬 수 있다. */
+    left: 50%;
+    transform: translateX(-50%);
+}
+.slide_pagination > li {
+    /* 현재 슬라이드가 아닌 것은 투명도 부여 */
+    color: #7fb5ff88;
+    cursor: pointer;
+    font-size: 25px;
+}
+.slide_pagination > li.active {
+    /* 현재 슬라이드 색상은 투명도 없이 */
+    color: #7fb5ff;
+}
+  
+.slide_item_duplicate {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    left: 0px;
+    width: 100%;
+    height: 300px;
+    flex-shrink: 0;
+    transition: left 0.15s;
+}
+
+
+/* 유튜브 동영상 섹션3------------------------- */
+
+
+/* 달성군보건소 TV */
+.youtube_txt{
+    width: 1440px;
+    display: block;
+    position: relative;
+    top: -140px;
+    left: 58px;
+}
+
+.youtube_txt h1{
+    color: #000;
+    font-weight: 800;
+    font-size: 1.8em;
+    
+}
+
+.youtube_txt p{
+
+    color: #505050;
+    display: block;
+    position: absolute;
+    top: 50px;
+    font-weight: lighter;
+
+}
+
+.youtube_txt h1>.youtube_txt_blue{
+    color: rgba(29,116,197,1);
+}
+/* 달성군보건소 TV 끝-------------------------*/
+
+
+
+#section3{
+    width: 100%;
+    height: 400px;
+    background: rgba(29,116,197,0.8);
+    margin: 0 auto;
+    top: 450px;
+}
+
+#section3 .section3_youtube{
+    width: 1440px;
+    height: auto;
+    display: flex;
+    margin: 0 auto;
+}
+
+#section3 .section3_youtube .video01>iframe{
+    position: relative;
+    margin-right: 20px;
+    margin-top: 50px;
+    box-sizing: border-box;
+    border-radius: 30px;
+    left: -1150px;
+}
+#section3 .section3_youtube .video02>iframe{
+    margin-top: 50px;
+    margin-left: 10px;
+    box-sizing: border-box;
+    border-radius: 30px;
+    position: relative;
+    left: -1150px;
+}
+
+#section3 .sns_wrap{
+    position: relative;
+}
+
+
+#section3 .img1>img{
+    box-sizing: border-box;
+    border-radius: 50px;
+    background-color: white;
+    position: absolute;
+    left: -1000px;
+    top: 50px;
+    cursor: pointer;
+    padding: 5px;
+}
+
+#section3 .img2>img{
+    box-sizing: border-box;
+    border-radius: 50px;
+    background-color: white;
+    position: absolute;
+    left: -1000px;
+    top: 150px;
+    cursor: pointer;
+    padding: 5px;
+
+}
+
+#section3 .img3>img{
+    box-sizing: border-box;
+    border-radius: 50px;
+    background-color: white;
+    position: absolute;
+    left: -1000px;
+    top: 250px;
+    cursor: pointer;
+    padding: 5px;
+
+}
+
+
+/* 둥실둥실 */
+
+#profile {width: 1200px; height: 120px;   margin-bottom: 100px; padding-top: 120px;}
+#profile .contentsBox1 h2 {font-family: 'Ubuntu', sans-serif; font-size: 3em; margin-top: 20px; color: #192838; }
+#profile .contentsBox1 {width: 300px; height: 200px;margin: 0 50px;position: relative;}
+#profile .contentsBox1 ul li {float: left; list-style: none; }
+#profile .contentsBox1 ul li.dd1 {position: absolute; top: 20px; left: 1150px; }
+#profile .contentsBox1 ul li.dd2 {position: absolute; top: 100px; left: 600px; font-size: 0;color: transparent;}
+#profile .contentsBox1 ul li.dd3 {position: absolute; top: 80px; left: 370px;font-size: 0;color: transparent;}
+#profile .contentsBox1 ul li.dd4 {position: absolute;top: 100px; left: 70px;font-size: 0;color: transparent;}
+#profile .contentsBox1 ul li.dd5 {position: absolute;top: 100px; right: 60px;font-size: 0;color: transparent;}
+#profile .contentsBox1 ul li.dd6 {position: absolute;top: 80px; right: 140px;font-size: 0;color: transparent;}
+#profile .contentsBox1 ul li.dd7 {position: absolute;top: 80px; left: 690px;font-size: 0;color: transparent;}
+#profile .contentsBox1 ul li.dd8 {position: absolute; display: none;}
+#profile .contentsBox1 ul li.dd9 {position: absolute; top: 80px; left: 140px;font-size: 0;color: transparent;}
+
+.contentsBox1{
+    position: relative;
+    top: -200px;
+}
+
+#profile .contentsBox1 ul li>div{
+    /*  color: transparent; */
+    text-indent: -9999px;
+}
+
+
+/* section4  -----------------------------------------------*/
+
+#section4{
+    width: 1440px;
+    height: 540px;
+    margin: 0 auto;
+    position: relative;
+    top: 600px;
+    /* background-color: yellowgreen; */
+}
+.babyimg{
+    position: absolute;
+    left: 200px;
+    display: block;
+}
+
+.inoculation{
+    position: relative;
+    display: block;
+    margin: 0 auto;
+}
+
+.inoculation .brt_bg{
+    display: block;
+    position: absolute;
+    background-color: #0099bb;
+    width: 545px;
+    height: 63px;
+    left: 700px;
+    top: 200px;
+    box-sizing: border-box;
+    border-radius: 10px;
+}
+
+.inoculation h2{
+    display: block;
+    position: absolute;
+    left: 810px;
+    top: 120px;
+}
+
+.brt_select{
+    display: block;
+    position: relative;
+    top: 20px;
+    left: 28px;
+    color: white;
+}
+
+#section4 .inoculation .search{
+    box-sizing: border-box;
+    width: 150px;
+    height: 40px;
+    background: #e86966;
+    display: block;
+    position: absolute;
+    top: -8px;
+    left: 340px;
+}
+#section4 .inoculation .search>a{
+    position: absolute;
+    top: 12px;
+    left: 5px;
+    color: white;
+}
+
+
+/* 관련기관 바로가기 섹션5---------------------------------- */
+
+#section5{
+    display: block;
+}
+
+.relatedsitesWrap{
+    display: block;
+    width: 1440px;
+    height: 250px;
+    position: relative;
+    top: 550px;
+    margin: 0 auto;
+
+}
+
+#section5 hr{
+    position: relative;
+    display: block;
+    width: 100%;
+    top: 550px;
+}
+.relatedsitesWrap_txt{
+    display: block;
+    position: relative;
+    left: 50px;
+}
+.relatedsitesWrap_txt h1{
+    color: #000;
+    font-weight: 800;
+    font-size: 1.8em;
+}
+
+.relatedsitesWrap_txt p{
+    color: #505050;
+    display: block;
+    position: absolute;
+    top: 30px;
+}
+
+.relatedsitesWrap .doumiimg{
+    display: block;
+    position: absolute;
+    left: 50px;
+    top: 100px;
+}
+
+.relatedsitesWrap .baroWrap{
+    display: block;
+    position: relative;
+    left: 1000px;
+    cursor: pointer;
+}
+
+.relatedsitesWrap .baroWrap .num2{
+    position: absolute;
+    display: block;
+    left: 0px;
+}
+
+
+
+
+/* 푸터---------------------------------------- */
+footer{
+    width: 100%;
+    height: 280px;
+    background-color: #585858;
+    top: 700px;
+    position: relative;
+    display: block;
+}
+
+
+footer #footerWrap{
+    width: 1440px;
+    height: 280px;
+    display: block;
+    background-color: #585858;
+    position: relative;
+    margin: 0 auto;
+}
+footer #footerWrap>.footer_logo{
+    display: block;
+    position: absolute;
+    left: 45px;
+    top: 65px;
+}
+
+
+
+footer #footerWrap .footer_txt ul .txt_main{
+    float: left;
+    margin-left: 25px;
+    display: block;
+    position: relative;
+    left: 320px;
+    top: 40px;
+    
+}
+
+
+footer #footerWrap .footer_txt ul li a{
+    list-style: none;
+    color: white;
+    font-weight:300;
+    
+}
+
+footer #footerWrap .footer_p p{
+    color: white;
+    font-family: 'GmarketSansLight';
+    position: absolute;
+    left: 345px;
+    top: 80px;
+    line-height: 30px;
+    font-size: 0.85em;
+}
+
+
+
+/* 푸터 투뎁스메뉴 올라오는버튼 ------------- */
+#footer_select ul#fSelect{
+    float: right;
+    margin-right: 100px;
+    margin-top: 50px;
+}
+
+#footer_select ul#fSelect li{
+    float: left;
+    width: 220px;
+    height: 45px;
+    text-align: center;
+    position: relative;
+}
+
+
+
+
+
+#footer_select ul#fSelect li.fSelect_1dep01{
+    border: 1px solid #777777;
+
+}
+#footer_select ul#fSelect li.fSelect_1dep02{
+    border-left: 1px solid #777777;
+    border-right: 1px solid #777777;
+}
+
+
+
+#footer_select ul#fSelect > li:hover >a{
+    color: #fff;
+    transition: all 0.3s ease-in-out;
+    
+}
+
+#footer_select ul#fSelect > li li:hover>a{
+    color: #fff;
+    transition: all 0.3s ease-in-out;
+    
+}
+
+
+
+#footer_select ul#fSelect  li a{
+    display: block;
+    margin-top: 12px;
+    margin-right: 25px;
+    font-size: 14px;
+    color: #ffffff;
+    letter-spacing: -1px;
+}
+
+#footer_select ul#fSelect li a i{
+    margin-left: 20px;
+}
+
+
+/* 셀렉트 투뎁스 ul ul */
+#footer_select ul#fSelect ul.fSelect_2dep{
+   position: absolute;
+   bottom: 45px;
+   left: 0;
+   height: 200px;
+   overflow: hidden;
+   overflow-y: scroll;
+}
+
+#footer_select ul#fSelect ul{
+    display: none;
+}
+
+#footer_select ul#fSelect ul.fSelect_2dep li{
+    background-color: #2e2d34;
+    text-align: center;
+   
+}
+
+#footer_select ul#fSelect ul li:hover a{
+    text-decoration: underline;
+}
+
+#footer_select ul#fSelect ul.fSelect_2dep li a{
+    display: block;
+    letter-spacing: -1px;
+}
+
+
+#footer_select ul#fSelect ul.fSelect_2dep02{
+    position: absolute;
+    bottom:  45px;
+    left: 0;
+    height: 320px;
+    overflow: hidden;
+    overflow-y: scroll;
+ }
+ 
+ 
+ 
+ #footer_select ul#fSelect ul.fSelect_2dep02 li{
+     background-color: #2e2d34;
+ 
+ }
+
+/* QR코드 이미지 */
+
+footer #QrgovWrap{
+    display: block;
+    position: relative;
+    top: 150px;
+    left: 1250px;
+}
+
+
+footer .QRimg img{
+    display: block;
+    position: absolute;
+    left: 20px;
+}
+
+footer .gov img{
+    display: block;
+    position: absolute;
+    left: -100px;
+}
+
+
+/* 위로 올라가는 버튼 */
+.upbutton{
+    position: fixed;
+    left: 1700px;
+    top: 750px;
+    z-index: 1;
+}

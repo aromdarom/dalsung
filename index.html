@@ -1,0 +1,799 @@
+﻿<!DOCTYPE html>
+<html>
+
+<head>
+  <title>군민이 빛나는 달성군보건소</title>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+
+ 
+
+  <link rel="stylesheet" href="./css/weather-icons.min.css">
+  <link rel="stylesheet" href="./css/webfont.css">
+
+  <link rel="stylesheet" href="./css/style.css">
+
+  <!-- 탭메뉴,슬라이드배너 -->
+  <script src="http://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+
+
+  <!-- 날씨 -->
+  <script src="./js/weather.js"></script>
+
+  
+
+  <!-- 팝업닫기 -->
+  <script src="http://code.jquery.com/jquery-1.11.3.min.js"></script>
+  <!-- 둥실둥실 -->
+  <script src="js/jquery-1.9.1.min.js"></script>
+  <script src="js/DB_springMove_fn.js"></script>
+  <script src="js/scroll_menu.js"></script>
+
+  <!-- 아코디언 고정 -->
+  <script src="./jquery-1.4.4.min.js"></script>
+  <script src="./jquery.easing.1.3.js"></script>
+
+  <script src="./js/jQuery.js"></script>
+
+  
+</head>
+
+<body>
+
+  <form name="notice_form">
+    <div id="divpop1" class="divpop">    
+         <div class="button_area">
+             <input type='checkbox' name='chkbox' id='todaycloseyn' value='Y'>오늘 하루 이 창을 열지 않음    
+             <a href='#' onclick="javascript:closeWin(1);"><B>[닫기]</B></a>
+         </div>
+    </div>
+  </form>
+
+
+
+  <header>
+    <div id="header_wrap">
+      <div class="header cf">
+        <div class="logo fl">
+          <a href="index.html"><img src="./img/logo.png" alt="logo" width="180"></a>
+        </div>
+        <div class="search fl">
+          <div class="store_search">
+            <form>
+              <input type="text" placeholder="찾으시는 검색어를 입력하세요.">
+              <button class="search_btn"><img src="./img/ico_srch_header.png" alt=""></button>
+            </form>
+          </div>
+        </div>
+        <div class="weather_log fr">
+          <div class="weather fl">
+            <div class="api">
+              <div class="api_wrap">
+                <div class="cicon"></div>
+                <div class="temp_info">
+                  <div class="date"></div>
+                  <div class="cname"></div> <!-- 도시이름 -->
+                  <div class="ctemp">현재 온도 : </div>
+                  <div class="chightemp">최고 온도 : </div>
+                  <div class="clowtemp">최저 온도 : </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="login">
+            <ul>
+              <li class="fl"><a href="./login.html">로그인</a></li>
+              <li><img src="./img/login.svg" class="fl" width="16" alt="login"></li>
+            </ul>
+            <ul>
+              <li class="fl"><a href="#">회원가입</a></li>
+              <li><img src="./img/user-solid.svg" class="fl" width="16" alt="membership"></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+  
+  <body>
+    <div class="container">
+      <nav>
+        <ul>
+          <li>
+            <a href="#none">열린보건</a>
+            <div class="sub">
+              <div class="sub_contents">
+                <div class="brand">
+                  <div class="linebox"></div>
+                  <br>
+                  <span>열린보건</span>
+                  <br>
+                  <img src="./img/navsimbol.png" width="100" height="100" alt="simbol">
+                </div>
+                <ul>
+                  <li class="subli"><a href="#none">보건소소개</a></li>
+                  <ul>
+                    <li><a href="./sub01.html">보건소장 인사말</a></li>
+                    <li><a href="#none">연혁 및 현황</a></li>
+                    <li><a href="#none">조직도</a></li>
+                    <li><a href="#none">부서별안내</a></li>
+                    <li><a href="./sub02.html">찾아오시는길</a></li>
+                    <li><a href="#none">보건의료서비스헌장</a></li>
+                  </ul>
+                </ul>
+                <ul>
+                  <li class="subli"><a href="#none">건강상담실</a></li>
+                  <ul>
+                    <li><a href="#none">온라인상담실</a></li>
+                    <li><a href="#none">자가진단</a></li>
+                  </ul>
+                </ul>
+                <ul>
+                  <li class="subli"><a href="#none">공지사항</a></li>
+                  <ul>
+                    <li><a href="#none">공지사항</a></li>
+                  </ul>
+                </ul>
+                <ul>
+                  <li class="subli"><a href="#none">보건뉴스</a></li>
+                </ul>
+              </div>
+            </div>
+          </li>
+          <li>
+            <a href="">보건민원</a>
+            <div class="sub">
+              <div class="sub_contents">
+                <div class="brand">
+                  <div class="linebox"></div>
+                  <br>
+                  <span>보건민원</span>
+                  <br>
+                  <img src="./img/navsimbol.png" width="100" height="100" alt="simbol">
+                </div>
+                <ul>
+                  <li class="subli"><a href="#none">진료안내</a></li>
+                  <ul>
+                    <li><a href="#none">일반진료</a></li>
+                    <li><a href="#none">한방진료</a></li>
+                    <li><a href="#none">치과진료</a></li>
+                    <li><a href="#none">물리치료</a></li>
+                  </ul>
+                </ul>
+                <ul>
+                  <li class="subli"><a href="#none">일반검사</a></li>
+                </ul>
+                <ul>
+                  <li class="subli"><a href="#none">보건민원</a></li>
+                  <ul>
+                    <li><a href="#none">제증명발급</a></li>
+                    <li><a href="#none">보건민원안내</a></li>
+                  </ul>
+                </ul>
+                <ul>
+                  <li class="subli"><a href="#none">선별진료소안내</a></li>
+                </ul>
+              </div>
+            </div>
+          </li>
+          <li>
+            <a href="">보건사업</a>
+            <div class="sub">
+              <div class="sub_contents">
+                <div class="brand">
+                  <div class="linebox"></div>
+                  <br>
+                  <span>보건사업</span>
+                  <br>
+                  <img src="./img/navsimbol.png" width="100" height="100" alt="simbol">
+                </div>
+                <ul>
+                  <li class="subli"><a href="#none">예방접종</a></li>
+                  <ul>
+                    <li><a href="#none">예방접종은?</a></li>
+                    <li><a href="#none">영유아 예방접종</a></li>
+                    <li><a href="#none">성인 예방접종</a></li>
+                    <li><a href="#none">국가 예방접종 위탁의료기관</a></li>
+                  </ul>
+                </ul>
+                <ul>
+                  <li class="subli"><a href="#none">일반검사</a></li>
+                  <ul>
+                    <li><a href="#none">신혼부부 건강검진</a></li>
+                    <li><a href="#none">임산부 산전관리 및 검사</a></li>
+                    <li><a href="#none">임산부 엽산제 및 철분제 지급</a></li>
+                    <li><a href="#none">임산부 교육 운영</a></li>
+                    <li><a href="#none">난청조기진단사업</a></li>
+                    <li><a href="#none">신천성대사이상 검사·관리</a></li>
+                    <li><a href="#none">태아기형아 통합선별검사</a></li>
+                    <li><a href="#none">산후조리원 운영 현황</a></li>
+                    <li><a href="#none">영양플러스사업</a></li>
+                    <li><a href="#none">맘편한 임신 서비스</a></li>
+                  </ul>
+                </ul>
+                <ul>
+                  <li class="subli"><a href="#none">출산 지원사업</a></li>
+                  <ul>
+                    <li><a href="#none">난임 부부 지원사업</a></li>
+                    <li><a href="#none">산모신생아 건강관리사 지원사업</a></li>
+                    <li><a href="#none">대구형 산모건강관리사 파견사업</a></li>
+                    <li><a href="#none">첫만남이용권</a></li>
+                    <li><a href="#none">출산축하금 및 출산장려금</a></li>
+                    <li><a href="#none">저소득층 기저귀조제분유 지원</a></li>
+                    <li><a href="#none">다자녀 출산양육지원 서비스</a></li>
+                    <li><a href="#none">어린이 영양제 지원</a></li>
+                    <li><a href="#none">아기사랑 유모차 대여</a></li>
+  
+                  </ul>
+                </ul>
+                <ul>
+                  <li class="subli"><a href="#none">의료비 지원사업</a></li>
+                  <ul>
+                    <li><a href="#none">소아 암환자 의료비</a></li>
+                    <li><a href="#none">암환자 의료비</a></li>
+                    <li><a href="#none">희귀질환자 의료비</a></li>
+                    <li><a href="#none">청소년 산모 의료비</a></li>
+                    <li><a href="#none">미숙아 및 선천이상아 의료비</a></li>
+                    <li><a href="#none">고위험 임산부 의료비</a></li>
+                    <li><a href="#none">정신질환 치료비 지원사업</a></li>
+                  </ul>
+                </ul>
+              </div>
+            </div>
+          </li>
+          <li>
+            <a href="">달성주민건강증진센터</a>
+            <div class="sub">
+              <div class="sub_contents">
+                <div class="brand">
+                  <div class="linebox"></div>
+                  <br>
+                  <span>달성주민<br>건강증진센터</span>
+                  <br>
+                  <img src="./img/navsimbol.png" width="100" height="100" alt="simbol">
+                </div>
+                <ul>
+                  <li class="subli"><a href="#none">센터소개</a></li>
+                  <ul>
+                    <li><a href="#none">조직 및 업무안내</a></li>
+                    <li><a href="#none">층별시설안내</a></li>
+                    <li><a href="#none">찾아오시는길</a></li>
+                  </ul>
+                </ul>
+                <ul>
+                  <li class="subli"><a href="#none">건강증진사업</a></li>
+                  <ul>
+                    <li><a href="#none">건강관리실운영</a></li>
+                    <li><a href="#none">체력진단실 운영</a></li>
+                    <li><a href="#none">대사증후군관리사업</a></li>
+                    <li><a href="#none">모바일헬스케어사업</a></li>
+                    <li><a href="#none">어린이 건강프로그램</a></li>
+                    <li><a href="#none">맞춤형 건강프로그램</a></li>
+                    <li><a href="#none">구강보건실운영</a></li>
+                    <li><a href="#none">달성군정신건강복지센터</a></li>
+                  </ul>
+                </ul>
+              </div>
+            </div>
+          </li>
+          <li>
+            <a href="">온라인 신청</a>
+            <div class="sub">
+              <div class="sub_contents">
+                <div class="brand">
+                  <div class="linebox"></div>
+                  <br>
+                  <span>온라인 신청</span>
+                  <br>
+                  <img src="./img/navsimbol.png" width="100" height="100" alt="simbol">
+                </div>
+                <ul>
+                  <li class="subli"><a href="#none">교육신청</a></li>
+                </ul>
+                <ul>
+                  <li class="subli"><a href="#none">지원사업 신청</a></li>
+                </ul>
+                <ul>
+                  <li class="subli"><a href="#none">공동격리 신청</a></li>
+                </ul>
+                <ul>
+                  <li class="subli"><a href="#none">모유수유 클리닉</a></li>
+                </ul>
+              </div>
+            </div>
+          </li>
+          <li>
+            <a href="">게시판</a>
+            <div class="sub">
+              <div class="sub_contents">
+                <div class="brand">
+                  <div class="linebox"></div>
+                  <br>
+                  <span>게시판</span>
+                  <br>
+                  <img src="./img/navsimbol.png" width="100" height="100" alt="simbol">
+                </div>
+                <ul>
+                  <li class="subli"><a href="./table.html">게시판</a></li>
+                </ul>
+  
+              </div>
+            </div>
+          </li>
+        </ul>
+      </nav>
+    </div>
+  </body>
+  <section>
+    <div id="service">
+      <div id="service_center">
+        <div id="service_t">
+          <h1>자주찾는<br>서비스</h1>
+        </div>
+        <div id="service_box"></div>
+        <div id="service_menu">
+          <ul>
+            <li>
+              <a href="#none" class="service_box">
+                <span class="front"><img src="./img/icon-white/1.png" width="40" height="40" alt="icon1"></span>
+                <p>진료안내</p>
+              </a>
+            </li>
+            <li>
+              <a href="#none" class="service_box">
+                <span><img src="./img/icon-white/2.png" width="40" height="40" alt="icon2"></span>
+                <p>층별<br>시설 안내</p>
+              </a>
+            </li>
+            <li>
+              <a href="#none" class="service_box">
+                <span><img src="./img/icon-white/3.png" width="40" height="40" alt="icon3"></span>
+                <p>온라인<br>상담실</p>
+              </a>
+            </li>
+            <li>
+              <a href="#none" class="service_box">
+                <span><img src="./img/icon-white/4.png" width="40" height="40" alt="icon4"></span>
+                <p>온라인<br>제증명발급</p>
+              </a>
+            </li>
+            <li>
+              <a href="#none" class="service_box">
+                <span><img src="./img/icon-white/5.png" width="40" height="40" alt="icon5"></span>
+                <p>물리치료</p>
+              </a>
+            </li>
+            <li>
+              <a href="#none" class="service_box">
+                <span><img src="./img/icon-white/6.png" width="40" height="40" alt="icon6"></span>
+                <p>건강검진</p>
+              </a>
+            </li>
+            <li>
+              <a href="#none" class="service_box">
+                <span><img src="./img/icon-white/7.png" width="40" height="40" alt="icon7"></span>
+                <p>달성주민<br>건강증진센터</p>
+              </a>
+            </li>
+            <li>
+              <a href="#none" class="service_box">
+                <span><img src="./img/icon-white/8.png" width="40" height="40" alt="icon8"></span>
+                <p>달성군<br>치매안심센터</p>
+              </a>
+            </li>
+            <li>
+              <a href="#none" class="service_box">
+                <span><img src="./img/icon-white/9.png" width="40" height="40" alt="icon9"></span>
+                <p>예방접종</p>
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+  
+  <section id="event">
+    <div class="upbutton"><a href="#header"><img src="./img/up.png" width="50" alt="위로올라가기"></a></div>
+
+    <div class="typebox"><h2 class="type">군민이 빛나는 <span class="typed-cursor">달성군 보건소</span></h2></div>
+    <div class="inner">
+      <ul class="tab">
+        <li class="nth1">
+          <a href="#">
+            <h3>
+              <img src="./img/section_img/family2.jpg" alt="건강검진">
+              <span class="txtWrap">
+                <em class="e_name">주기적인 건강검진은 필수!</em>
+                <br>
+                <span class="lt">건강검진 사업 알아보기</span>
+                <br>
+                <span class="pay">자세히 알아보기</span>
+              </span>
+            </h3>
+          </a>
+          <div class="bigimg">
+            <h4>
+              <img src="./img/section_img/family_txt.png" alt="event_ti01_txt">
+            </h4>
+            <img src="./img/section_img/family.jpg" alt="온가족행복지킴이">
+          </div>
+        </li>
+        <li class="nth2">
+          <a href="#">
+            <h3>
+              <img src="./img/section_img/hart2.jpg" alt="출산지원">
+              <span class="txtWrap">
+                <em class="e_name">아이와 가족에게 특별한 혜택을</em>
+                <br>
+                <span class="lt">출산지원 사업 알아보기</span>
+                <br>
+                <span class="pay">자세히 알아보기</span>
+              </span>
+            </h3>
+          </a>
+          <div class="bigimg">
+            <h4>
+              <img src="./img/section_img/hart_txt.png" alt="출산지원_txt">
+            </h4>
+            <img src="./img/section_img/hart.jpg" alt="기쁨이두배">
+          </div>
+        </li>
+        <li class="nth3">
+          <a href="#">
+            <h3>
+              <img src="./img/section_img/old2.jpg" alt="치매안심센터">
+              <span class="txtWrap">
+                <em class="e_name">치매에 최적화된 시설과 커리큘럼</em>
+                <br>
+                <span class="lt">치매안심센터 알아보기</span>
+                <br>
+                <span class="pay">자세히 알아보기</span>
+              </span>
+            </h3>
+          </a>
+          <div class="bigimg">
+            <h4>
+              <img src="./img/section_img/old_txt.png" alt="치매안심센터_txt">
+            </h4>
+            <img src="./img/section_img/old.jpg" alt="치매안심센터">
+          </div>
+        </li>
+        <li class="nth4">
+          <a href="#">
+            <h3>
+              <span class="circle"><img src="./img/section_img/trust2.jpg" alt="일반진료"></span>
+                <span class="txtWrap">
+                  <em class="e_name">친절하고 전문적인 진료를</em>
+                  <br>
+                  <span class="lt">일반진료 알아보기</span>
+                  <br>
+                  <span class="pay">자세히 알아보기</span>
+                </span>
+            </h3>
+          </a>
+          <div class="bigimg">
+            <h4>
+              <img src="./img/section_img/trust_txt.png" alt="일반진료_txt">
+            </h4>
+            <img src="./img/section_img/trust.jpg" alt="일반진료">
+          </div>
+        </li>
+      </ul>
+    </div>
+  </section>
+  
+  
+  
+  <section id="section2">
+    <div class="tap_txt">
+      <h1><span class="txt_blue">달성군보건소</span> 소식</h1>
+      <p>달성군보건소의 다양한 소식을 알려드립니다.</p>
+    </div>
+    <div id="service_box"></div>
+    <section class="tabArea">
+      <ul class="tab">
+        <li class="on">
+          <a href="#!"><span>공지사항</span></a>
+        </li>
+        <li>
+          <a href="#!"><span>보건뉴스</span></a>
+        </li>
+        <li>
+          <a href="#!"><span>건강상담실</span></a>
+        </li>
+      </ul>
+      <div class="tabBox on">
+        <div class="notice">
+          <ul>
+            <li>
+              <p>2023년 5월 영양플러스사업 신규 대상자 모집</p>
+              <span class="day">2023-04-26</span>
+            </li>
+            <li>
+              <p>의료기관 가이드라인 안내</p>
+              <span class="day">2023-04-26</span>
+            </li>
+            <li>
+              <p>2023년 제9회 유아차 걷기 한마당 개최 안내</p>
+              <span class="day">2023-04-13</span>
+            </li>
+            <li>
+              <p>근골격계질환 예방 운동 프로그램 「관절튼튼 운동교실」 참여자 모집</p>
+              <span class="day">2023-04-12</span>
+            </li>
+            <li>
+              <p>의료기관 간병인력 코로나19 감염예방·관리 교육자료 번역본(영어, 러시아어)</p>
+              <span class="day">2023-04-06</span>
+            </li>
+            <li>
+              <p>2023년 설레林(임) 숲태교 교실 대상자 모집 안내</p>
+              <span class="day">2023-04-04</span>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <div class="tabBox">
+        <div class="news">
+          <ul>
+            <li>
+              <p>「주간 건강과 질병」 제16권 제13호</p>
+              <span class="day">2023-04-21</span>
+            </li>
+            <li>
+              <p>엠폭스 예방 및 행동수칙 안내</p>
+              <span class="day">2023-04-17</span>
+            </li>
+            <li>
+              <p>「주간 건강과 질병」 제16권 제12호</p>
+              <span class="day">2023-04-07</span>
+            </li>
+            <li>
+              <p>「주간 건강과 질병」 제16권 제11호</p>
+              <span class="day">2023-04-03</span>
+            </li>
+            <li>
+              <p>「주간 건강과 질병」 제16권 제10호</p>
+              <span class="day">2023-03-17</span>
+            </li>
+            <li>
+              <p>「주간 건강과 질병」 제16권 제9호</p>
+              <span class="day">2023-03-10</span>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <div class="tabBox">
+        <div class="album">
+          <ul>
+            <li>
+              <p>RE: 임산부 초음파관련 질문</p>
+              <span class="day">2015-10-20</span>
+            </li>
+            <li>
+              <p>임산부 초음파관련 질문</p>
+              <span class="day">2015-09-09</span>
+            </li>
+            <li>
+              <p>달성군 한방난임지원 문의</p>
+              <span class="day">2015-09-08</span>
+            </li>
+            <li>
+              <p>RE: 영양플러스사업</p>
+              <span class="day">2015-07-17</span>
+            </li>
+            <li>
+              <p>영양플러스사업</p>
+              <span class="day">2015-07-16</span>
+            </li>
+            <li>
+              <p>RE: 산전검사문의요~</p>
+              <span class="day">2015-07-06</span>
+            </li>
+          </ul>
+        </div>
+      </div>
+      
+    </section>
+  
+    <section class="slidebanner">
+      <div class="slide slide_wrap">
+        <div class="slide_item item1"><a href="#"><img src="./img/bannerimg/선별진료소안내.jpg" alt="선별진료소안내"></a></div>
+        <div class="slide_item item2"><a href="#"><img src="./img/bannerimg/암건강검진.jpg" alt="암건강검진"></a></div>
+        <div class="slide_item item3"><a href="#"><img src="./img/bannerimg/원숭이두창예방수칙.jpg" alt="원숭이두창예방수칙"></a></div>
+        <div class="slide_item item4"><a href="#"><img src="./img/bannerimg/일반진료,검사등민원재기안내.jpg" alt="민원재기안내"></a></div>
+        <div class="slide_item item5"><a href="#"><img src="./img/bannerimg/혈압측정기위치지도.jpg" alt="혈압측정기위치지도"></a></div>
+        <div class="slide_prev_button slide_button">◀</div>
+        <div class="slide_next_button slide_button">▶</div>
+        <ul class="slide_pagination"></ul>
+      </div>
+    </section>
+  
+  </section>
+  
+  <section id="section3">
+    <div class="section3_youtube">
+    <div class="youtube_txt">
+      <h1><span class="youtube_txt_blue">달성군보건소</span> TV</h1>
+      <p>달성군보건소는 꾸준히 나아가는중! 보건소소식을 영상으로 만나보세요.</p>
+      <div id="dungsil">
+        <div id="profile">
+          <div class="contentsBox1 cf">
+            <ul>
+              <li class="dd1"><img src="./img/dungsil.png" alt="dungsil" /></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+    </div>
+      <div class="video01"><iframe width="560" height="315" src="https://www.youtube.com/embed/AzMeWlyAuOs" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe></div>
+      <div class="video02"><iframe width="560" height="315" src="https://www.youtube.com/embed/Kkz9IDY9hSk" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe></div>
+    <div class="sns_wrap">
+      <div class="img1">
+        <img src="./img/sns/facebook-f.svg" width="40" height="40" alt="달성군보건소 facebook">
+      </div>
+      <div class="img2">
+        <img src="./img/sns/instagram.svg" width="40" height="40" alt="달성군보건소 instagram">
+      </div>
+      <div class="img3">
+        <img src="./img/sns/twitter.svg" width="40" height="40" alt="달성군보건소 twitter">
+      </div>
+    </div>
+    </div>
+  </section>
+  
+  <section>
+    <div id="section4">
+      <div class="babyimg">
+        <img src="./img/inoculation.jpg" width="400" alt="아기">
+      </div>
+      <div class="inoculation">
+        <h2>아기의 생일을 선택해 주세요!</h2>
+        <div class="brt_bg">
+          <div class="brt_select">
+            <label for="year">태어난 년도:</label>
+            <select id="year" name="year">
+              <option value="2023">2021</option>
+              <option value="2024">2022</option>
+              <option value="2025">2023</option>
+              <!-- Add more options as needed -->
+            </select>
+  
+            <label for="month">월:</label>
+            <select id="month" name="month">
+              <option value="01">1월</option>
+              <option value="02">2월</option>
+              <option value="03">3월</option>
+              <option value="04">4월</option>
+              <option value="05">5월</option>
+              <option value="06">6월</option>
+              <option value="07">7월</option>
+              <option value="08">8월</option>
+              <option value="09">9월</option>
+              <option value="10">10월</option>
+              <option value="11">11월</option>
+              <option value="12">12월</option>
+            </select>
+  
+            <label for="day">일:</label>
+            <select id="day" name="day">
+              <option value="01">1</option>
+              <option value="02">2</option>
+              <option value="03">4</option>
+              <option value="03">5</option>
+              <option value="03">6</option>
+              <option value="03">7</option>
+              <option value="03">8</option>
+              <option value="03">9</option>
+              <option value="03">10</option>
+              <option value="03">11</option>
+              <option value="03">12</option>
+              <option value="03">13</option>
+              <option value="03">14</option>
+              <option value="03">15</option>
+              <option value="03">16</option>
+              <option value="03">18</option>
+              <option value="03">19</option>
+              <option value="03">20</option>
+              <option value="03">21</option>
+              <option value="03">22</option>
+              <option value="03">23</option>
+              <option value="03">24</option>
+              <option value="03">25</option>
+              <option value="03">26</option>
+              <option value="03">27</option>
+              <option value="03">28</option>
+              <option value="03">29</option>
+              <option value="03">30</option>
+              <option value="03">31</option>
+              <!-- Add more options as needed -->
+            </select>
+            <div class="search">
+              <a href="#none">예방접종일계산하기</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+  </section>
+  <section>
+    <div id="section5">
+      <hr style="border: 2px solid black;">
+      <div class="relatedsitesWrap">
+        <div class="relatedsitesWrap_txt">
+          <h1>관련사이트</h1>
+          <p>관련된 사이트도 둘러보세요.</p>
+        </div>
+        <div class="doumiimg">
+          <img src="./img/doumi01.png" width="200" alt="예방접종도우미">
+          <img src="./img/doumi02.png" width="200" alt="대구시난임우울증상담센터">
+        </div>
+        <div class="baroWrap">
+          <img src="./img/baro01.png" alt="예방접종도우미사이트바로가기">
+          <img class="num2" src="./img/baro02.png" alt="대구시난임우울증상담센터사이트바로가기">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div id="footerWrap">
+      <img class="footer_logo" src="./img/img_logo_footer.png" alt="footerlogo">
+      <div class="footer_txt">
+        <ul>
+          <div class="txt_main"><li><a href="#none">저작권정책</a></li></div>
+          <div class="txt_main"><li><a href="#none">뷰어다운로드</a></li></div>
+          <div class="txt_main"><li><a href="#none">찾아오시는길</a></li></div>
+          <div class="txt_main"><li><a href="#none">전화번호안내</a></li></div>
+          <div class="txt_main"><li><a href="#none">사이트맵</a></li></div>
+        </ul>
+      </div>
+      <div class="footer_p">
+        <p class="light">
+          [43004] 대구광역시 달성군 현풍읍 현풍중앙로 27 / FAX 053-668-3129
+          <br>
+          보건행정(668-3104), 통합건강증진(668-3188), 의약관리(668-3953)
+          <br>
+          감염예방(668-3122),가족보건(668-3134),
+          <br>
+          예방접종(668-3095~6),모자보건(668-3134~7),민원실(668-3109,3185)
+          <br>
+          Copyright ⓒ 대구광역시 달성군 보건소. All rights reserved.</p>
+      </div>
+      <div id="footer_select">
+        <ul id="fSelect">
+          <li class="fSelect_1dep01"><a href="#none">시군구 보건소
+                  <i class="fa-solid fa-chevron-up"></i>
+              </a>
+              <ul class="fSelect_2dep">
+                  <li><a href="https://www.jung.daegu.kr/new/healthcenter/pages/main/">중구보건소</a></li>
+                  <li><a href="https://www.dong.daegu.kr/health/">동구보건소</a></li>
+                  <li><a href="https://www.dgs.go.kr/health/">서구보건소</a></li>
+                  <li><a href="https://nam.daegu.kr/health/index.do">남구보건소</a></li>
+                  <li><a href="https://nam.daegu.kr/health/index.do">북구보건소</a></li>
+                  <li><a href="https://www.suseong.kr/health/index.do">수성구보건소</a></li>
+                  <li><a href="https://www.dalseo.daegu.kr/healthcenter/index.do">달서구보건소</a></li>
+              </ul>
+          </li>
+        </ul>
+      </div>
+      <div id="QrgovWrap">
+        <div class="gov">
+          <a href="https://www.youtube.com/watch?v=5ybh6nCQZw4"><img src="./img/img_gov.png" alt="gov"></a>
+        </div>
+        <div class="QRimg">
+          <img src="./img/img_qrcode.png" alt="qrcode">
+        </div>
+      </div>
+    </div>
+  </footer>
+  
+  <!-- 타이포그래피 js -->
+<script src="./js/typed.js"></script>
+</body>
+
+</html>
